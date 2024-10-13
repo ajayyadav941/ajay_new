@@ -1,11 +1,11 @@
 ---
 - name: Cisco show version example
-  hosts: routers
+  hosts: Cisco
   gather_facts: false
   tasks:
-    - name: run show version on the routers
+    - name: run show version command on the routers
       ios_command:
-        commands: show ip int bri
+        commands: show version | in Version
       register: output
     - name: print output
       debug:
